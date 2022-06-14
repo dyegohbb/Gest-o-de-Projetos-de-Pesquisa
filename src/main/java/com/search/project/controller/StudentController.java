@@ -1,4 +1,4 @@
-package com.search.controller;
+package com.search.project.controller;
 
 import org.springframework.stereotype.Controller;
 

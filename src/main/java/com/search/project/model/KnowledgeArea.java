@@ -1,4 +1,4 @@
-package com.search.model;
+package com.search.project.model;
 
 public enum KnowledgeArea {
 
