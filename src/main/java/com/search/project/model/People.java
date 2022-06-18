@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class People {
@@ -19,6 +21,7 @@ public abstract class People {
 	
 	private String nome;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataNascimento;
 	
 	private String email;

@@ -21,6 +21,8 @@ public class SearchProject {
 	
 	private String resumo;
 	
+	private String details;
+	
 	private byte[] arquivoPDF;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -64,7 +66,13 @@ public class SearchProject {
 	}
 	public void setColaboradores(List<Student> colaboradores) {
 		this.colaboradores = colaboradores;
-	} 
+	}
+	public String getDetails() {
+		return details;
+	}
+	public void setDetails(String details) {
+		this.details = details;
+	}
 	
 	
 }

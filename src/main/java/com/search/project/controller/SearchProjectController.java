@@ -29,6 +29,11 @@ public class SearchProjectController {
 	public String home() {
 		return "home";
 	}
+
+	@GetMapping("/projects")
+	public String projects() {
+		return "projects";
+	}
 	
 	@GetMapping("/project-register")
 	public String projectRegister() {
@@ -42,6 +47,11 @@ public class SearchProjectController {
 		model.addAttribute("student", searchProject);
 		
 		return "home";
+	}
+	
+	@GetMapping("/signup")
+	public String signup() {
+		return "signup";
 	}
 	
 	@GetMapping("/student-register")
@@ -62,15 +72,4 @@ public class SearchProjectController {
 	public String teacherRegister() {
 		return "teacherRegister";
 	}
-	
-	@PostMapping("/teacher-register/save")
-	public String teacherRegisterSave(Teacher teacher, Model model) {
-		
-		this.teacherDAO.save(teacher);
-		model.addAttribute("teacher", teacher);
-		
-		return "home";
-	}
-	
-	
 }

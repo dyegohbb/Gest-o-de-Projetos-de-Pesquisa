@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head th:replace="home :: headMgmt">
+</head>
+
+<body>
+	<script type="text/javascript" src="js/src/jquery.js"></script>
+	<script type="text/javascript" src="js/src/main.js"></script>
+	<script type="text/javascript"
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+
+	<section th:replace="home :: navBar">
+	</section>
+	<div class="mt-4 center flex-column">
+		<a class="btn btn-primary" href="/teacher/signup" role="button">Sou professor</a>
+		<a class="mt-2 btn btn-primary" href="/student/signup" role="button">Sou estudante</a>
+	</div>
+</body>
+
+</html>

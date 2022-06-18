@@ -16,6 +16,8 @@ public class Student extends People {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
 	
+	private String matricula;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Course curso;
 	
@@ -49,6 +51,12 @@ public class Student extends People {
 	}
 	public void setSituacaoMatricula(MatriculationSituation situacaoMatricula) {
 		this.situacaoMatricula = situacaoMatricula;
+	}
+	public String getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 	
 }

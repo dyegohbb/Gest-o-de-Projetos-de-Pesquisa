@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Teacher extends People {
 
@@ -16,6 +18,9 @@ public class Teacher extends People {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
 	
+	private String registro;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataAdmissao;
 	
 	@Enumerated(EnumType.STRING)
@@ -33,7 +38,10 @@ public class Teacher extends People {
 	public void setAreaConhecimento(KnowledgeArea areaConhecimento) {
 		this.areaConhecimento = areaConhecimento;
 	}
-
-	
-	
+	public String getRegistro() {
+		return registro;
+	}
+	public void setRegistro(String registro) {
+		this.registro = registro;
+	}
 }
