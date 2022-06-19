@@ -44,4 +44,10 @@ public class Teacher extends People {
 	public void setRegistro(String registro) {
 		this.registro = registro;
 	}
+	public Integer getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
 }

@@ -1,1 +1,3 @@
-console.log("hello")
+function print(oi){
+	console.log(oi);
+}

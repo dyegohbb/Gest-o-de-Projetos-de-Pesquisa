@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.search.project.model.Course;
 import com.search.project.model.SearchProject;
 import com.search.project.model.Student;
-import com.search.project.model.Teacher;
 import com.search.project.model.dao.SearchProjectDAO;
 import com.search.project.model.dao.StudentDAO;
 import com.search.project.model.dao.TeacherDAO;
@@ -18,12 +18,6 @@ public class SearchProjectController {
 
 	@Autowired
 	private SearchProjectDAO searchProjectDAO;
-	
-	@Autowired
-	private StudentDAO studentDAO;
-	
-	@Autowired
-	private TeacherDAO teacherDAO;
 	
 	@GetMapping("/")
 	public String home() {
@@ -44,7 +38,7 @@ public class SearchProjectController {
 	public String projectRegisterSave(SearchProject searchProject, Model model) {
 		
 		this.searchProjectDAO.save(searchProject);
-		model.addAttribute("student", searchProject);
+		model.addAttribute("searchProject", searchProject);
 		
 		return "home";
 	}
@@ -52,24 +46,5 @@ public class SearchProjectController {
 	@GetMapping("/signup")
 	public String signup() {
 		return "signup";
-	}
-	
-	@GetMapping("/student-register")
-	public String studentRegister() {
-		return "studentRegister";
-	}
-	
-	@PostMapping("/student-register/save")
-	public String studentRegisterSave(Student student, Model model) {
-		
-		this.studentDAO.save(student);
-		model.addAttribute("student", student);
-		
-		return "home";
-	}
-	
-	@GetMapping("/teacher-register")
-	public String teacherRegister() {
-		return "teacherRegister";
 	}
 }

@@ -17,7 +17,7 @@ public class TeacherController {
 	
 	@GetMapping("/teacher/signup")
 	public String projects() {
-		return "teacherSignup";
+		return "teacherRegister";
 	}
 	
 	@PostMapping("/teacher/save")
@@ -26,6 +26,6 @@ public class TeacherController {
 		this.teacherDAO.save(teacher);
 		model.addAttribute("teacher", teacher);
 		
-		return "teacherSignup";
+		return "teacherRegister";
 	}
 }

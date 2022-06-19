@@ -21,7 +21,7 @@ public class SearchProject {
 	
 	private String resumo;
 	
-	private String details;
+	private String detalhes;
 	
 	private byte[] arquivoPDF;
 	
@@ -67,11 +67,11 @@ public class SearchProject {
 	public void setColaboradores(List<Student> colaboradores) {
 		this.colaboradores = colaboradores;
 	}
-	public String getDetails() {
-		return details;
+	public String getDetalhes() {
+		return detalhes;
 	}
-	public void setDetails(String details) {
-		this.details = details;
+	public void setDetalhes(String detalhes) {
+		this.detalhes = detalhes;
 	}
 	
 	

@@ -7,23 +7,21 @@
 <body>
 	<script type="text/javascript" src="js/src/jquery.js"></script>
 	<script type="text/javascript" src="js/src/main.js"></script>
-	<script type="text/javascript"
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
 
 	<section th:replace="home :: navBar">
 	</section>
-	<form>
-		<div class="mt-4 form-outline mb-4 ">
-			<input type="text" id="form1Example1" class="form-control" required />
-			<label class="form-label" for="form1Example1">Titulo</label>
+	<form class="center flex-column" action="/project-register/save" method="post" th:object="${teacher}">
+		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
+			<input type="text" id="titulo" name="titulo" class="form-control" required />
+			<label class="form-label" for="titulo" name="titulo">Titulo</label>
 		</div>
-		<div class="form-outline mb-4">
-			<input type="text" id="form1Example1" class="form-control" required />
-			<label class="form-label" for="form1Example1">Resumo</label>
+		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
+			<input type="text" id="resumo" name="resumo" class="form-control" required />
+			<label class="form-label" for="resumo" name="resumo">Resumo</label>
 		</div>
-		<div class="form-outline mb-4">
-			<input type="textbox" id="form1Example1" class="form-control" required />
-			<label class="form-label" for="form1Example1">Detalhes</label>
+		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
+			<textarea type="text" id="detalhes" name="detalhes" class="form-control" rows="4" cols="100" required> </textarea>
+			<label class="form-label" for="detalhes" name="detalhes">Detalhes</label>
 		</div>
 		<button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 	</form>

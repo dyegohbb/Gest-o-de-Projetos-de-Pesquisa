@@ -17,16 +17,16 @@ public class StudentController {
 	
 	@GetMapping("/student/signup")
 	public String projects() {
-		return "studentSignup";
+		return "studentRegister";
 	}
 	
 	@PostMapping("/student/save")
 	public String teacherRegisterSave(Student student, Model model) {
 		
 		this.studentDAO.save(student);
-		model.addAttribute("teacher", student);
+		model.addAttribute("student", student);
 		
-		return "teacherSignup";
+		return "studentRegister";
 	}
 	
 }

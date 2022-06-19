@@ -7,8 +7,6 @@
 <body>
 	<script type="text/javascript" src="../js/src/jquery.js"></script>
 	<script type="text/javascript" src="../js/src/main.js"></script>
-	<script type="text/javascript"
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
 
 	<section th:replace="home :: navBar">
 	</section>
@@ -37,6 +35,15 @@
 			<input type="date" id="dataAdmissao" name="dataAdmissao" class="form-control" required />
 			<label class="form-label" for="dataAdmissao" name="dataAdmissao">Data de admissão</label>
 		</div>
+		<div class="center flex-row mt-4 mb-1">
+			<label class="me-3" th:each="knowledgeArea : ${T(com.search.project.model.KnowledgeArea).values()}"
+				th:value="${knowledgeArea}">
+				<input type="radio" name="areaConhecimento" id="areaConhecimento" th:value="${knowledgeArea}"><span
+					class="ms-2" th:text="${knowledgeArea.nomeExibicao}"></span><br>
+			</label>
+		</div>
+		<label class="form-label mb-4" for="knowledgeArea" name="knowledgeArea">Área de conhecimento</label>
+
 		<button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
 	</form>
 </body>
