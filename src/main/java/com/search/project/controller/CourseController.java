@@ -32,9 +32,9 @@ public class CourseController {
 	}
 	
 	@PostMapping("/courseRegister/save")
-	public String courseRegisterSave(@RequestParam Integer coordenadorId, Course course, Model model) {
+	public String courseRegisterSave(@RequestParam Integer teacherId, Course course, Model model) {
 		
-		Teacher teacher = teacherDAO.findById(coordenadorId).orElse(new Teacher());
+		Teacher teacher = teacherDAO.findById(teacherId).orElse(new Teacher());
 		course.setCoordenador(teacher);
 		
 		this.courseDAO.save(course);

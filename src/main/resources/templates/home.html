@@ -32,26 +32,19 @@
 			usando spring </p>
 		<h4 class="mt-5 d-flex justify-content-center"> Ultimos projetos: </h4>
 		<div class="mt-4 d-flex justify-content-center">
-			<div class="card me-5 mt-3">
-				<h6 class="card-header">01/01/2022</h6>
+			<div th:each="lastProject : ${lastProjects}" class="card me-5 mt-1 min-w">
+				<h6 class="card-header" th:text="${#temporals.format(lastProject.dataInicio, 'dd/MM/yyyy')}" />
 				<div class="card-body">
-					<h5 class="card-title">IA para atividades domésticas</h5>
-					<p class="card-text">Utilizando inteligencia artificial no dia-a-dia doméstico</p>
-					<a href="/project/1" class="btn btn-primary">Mais detalhes</a>
-				</div>
-			</div>
-			<div class="card me-5 mt-3">
-				<h6 class="card-header">01/06/2022</h6>
-				<div class="card-body">
-					<h5 class="card-title">A nova era da publicidade</h5>
-					<p class="card-text">Como o marketing digital vem influenciando a sociedade</p>
-					<a href="/project/2" class="btn btn-primary">Mais detalhes</a>
+					<h5 class="card-title nowrap ellipsis" th:attr="title=${lastProject.titulo}"
+						th:text="${lastProject.titulo}" />
+					<p class="card-text nowrap ellipsis" th:attr="title=${lastProject.resumo}"
+						th:text="${lastProject.resumo}" />
+					<a th:href="@{/project(codigo=${lastProject.codigo})}" class="btn btn-primary">Mais detalhes</a>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script type="text/javascript" src="js/src/jquery.js"></script>
-	<script type="text/javascript" src="js/src/bootstrap.js"></script>
+		<script type="text/javascript" src="js/src/jquery.js"></script>
+		<script type="text/javascript" src="js/src/bootstrap.js"></script>
 </body>
 
 </html>

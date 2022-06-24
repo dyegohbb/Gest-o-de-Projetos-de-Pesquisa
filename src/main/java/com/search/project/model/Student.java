@@ -58,5 +58,11 @@ public class Student extends People {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+	public Integer getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
 	
 }

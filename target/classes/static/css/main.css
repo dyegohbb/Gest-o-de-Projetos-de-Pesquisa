@@ -10,3 +10,14 @@
 .flex-row{
 	flex-direction: row;
 }
+
+.card.min-w{
+	min-width: 450px;
+}
+
+.nowrap.ellipsis {
+  width: 410px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

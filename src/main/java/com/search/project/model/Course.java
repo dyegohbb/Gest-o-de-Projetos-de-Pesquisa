@@ -10,10 +10,12 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Course {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
 	
+	// FIXME: ACEITANDO NOMES IGUAIS COMO CURSOS DIFERENTES, OCASIONANDO DOIS PROFESSORES ENSINANDO O MSM CURSO
 	private String nome;
 	
 	@ManyToOne(cascade = CascadeType.ALL)

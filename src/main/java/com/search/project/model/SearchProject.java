@@ -1,5 +1,6 @@
 package com.search.project.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class SearchProject {
@@ -30,6 +33,9 @@ public class SearchProject {
 	
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Student> colaboradores;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dataInicio;
 	
 	public Integer getCodigo() {
 		return codigo;
@@ -73,6 +79,10 @@ public class SearchProject {
 	public void setDetalhes(String detalhes) {
 		this.detalhes = detalhes;
 	}
-	
-	
+	public LocalDate getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(LocalDate dataInicio) {
+		this.dataInicio = dataInicio;
+	}
 }

@@ -17,17 +17,17 @@
 				<label class="form-label" for="matricula" name="matricula">Matricula</label>
 			</div>
 			<div class="mt-4 form-outline mb-4 me-3 ms-3 center flex-column">
-				<input type="number" id="anoIngresso" min="1900" max="2010" value="1900" name="anoIngresso"
+				<input type="number" id="anoIngresso" min="2020" value="2020" name="anoIngresso"
 					class="form-control" required />
 				<label class="form-label" for="anoIngresso" name="anoIngresso">Ano de ingressão</label>
 			</div>
 			
 			<div class="mt-4 form-outline mb-4 ms-3 center flex-column">
-				<select class="form-select w-100" name="courseId" id="courseId">
+				<select class="form-select w-100" name="courseId" id="courseId" required>
 					<option th:each="course : ${courses}" th:value="${course.codigo}" th:text="${course.nome}">
 					</option>
 				</select>
-				<label class="form-label" for="anoIngresso" name="anoIngresso">Curso</label>
+				<label class="form-label" for="courses" name="courses">Curso</label>
 			</div>
 			<div class="mt-4 form-outline mb-4 ms-3 center flex-column">
 				<input type="number" min="0" max="10" step="0.1" id="coeficienteRendimento" name="coeficienteRendimento"

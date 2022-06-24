@@ -16,7 +16,7 @@
 			<label class="form-label" for="nome" name="nome">Curso</label>
 		</div>
 		<div class="center flex-row mt-4 mb-1">
-			<select class="form-select" name="coordenadorId" id="coordenadorId">
+			<select class="form-select" name="teacherId" id="teacherId" required>
 				<option th:each="teacher : ${teachers}" th:value="${teacher.codigo}"
 					th:text="${teacher.nome}">
 				</option>
