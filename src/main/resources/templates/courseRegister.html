@@ -13,10 +13,10 @@
 	<form class="center flex-column" action="/courseRegister/save" method="post" th:object="${course}">
 		<div class="mt-4 form-outline mb-4 center flex-column">
 			<input type="text" id="nome" name="nome" class="form-control" required />
-			<label class="form-label" for="nome" name="nome">Nome</label>
+			<label class="form-label" for="nome" name="nome">Curso</label>
 		</div>
 		<div class="center flex-row mt-4 mb-1">
-			<select name="coordenadorId" id="coordenadorId">
+			<select class="form-select" name="coordenadorId" id="coordenadorId">
 				<option th:each="teacher : ${teachers}" th:value="${teacher.codigo}"
 					th:text="${teacher.nome}">
 				</option>

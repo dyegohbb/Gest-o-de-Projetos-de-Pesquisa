@@ -24,7 +24,7 @@ public class CourseController {
 	private TeacherDAO teacherDAO;
 	
 	@GetMapping("/courseRegister")
-	public String courseRegister( Course course, Model model){
+	public String courseRegister(Model model){
 		
 		List<Teacher> teachers = teacherDAO.findAll();
 		model.addAttribute("teachers", teachers);
