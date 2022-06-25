@@ -26,7 +26,7 @@ public abstract class People {
 	
 	private String email;
 	
-	private String linkedIn;
+	private String linkedin;
 	
 	public Integer getCodigo() {
 		return codigo;
@@ -52,11 +52,11 @@ public abstract class People {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getLinkedIn() {
-		return linkedIn;
+	public String getLinkedin() {
+		return linkedin;
 	}
-	public void setLinkedIn(String linkedIn) {
-		this.linkedIn = linkedIn;
+	public void setLinkedin(String linkedIn) {
+		this.linkedin = linkedIn;
 	}
 	
 	

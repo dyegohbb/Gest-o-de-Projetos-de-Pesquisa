@@ -6,43 +6,57 @@
 
 <body>
 
-<script type="text/javascript" src="../js/src/jquery.js"></script>
-<script type="text/javascript" src="../js/src/main.js"></script>
-<script type="text/javascript" src="../js/src/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="../js/src/bootstrap-select.min.js"></script>
-<link rel="stylesheet" th:href="@{/css/bootstrap-select.min.css}">
+	<script type="text/javascript" src="../js/src/jquery.js"></script>
+	<script type="text/javascript" src="../js/src/main.js"></script>
+	<script type="text/javascript" src="../js/src/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../js/src/bootstrap-select.min.js"></script>
+	<link rel="stylesheet" th:href="@{/css/bootstrap-select.min.css}">
 
 
 	<section th:replace="home :: navBar">
 	</section>
-	<form class="center flex-column" action="/project-register/save" method="post" th:object="${teacher}">
+	<form class="center flex-column" action="/project-register/save" enctype="multipart/form-data" method="post"
+		th:object="${teacher}">
+
 		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
 			<input type="text" id="titulo" name="titulo" class="form-control" required />
 			<label class="form-label" for="titulo" name="titulo">Titulo</label>
 		</div>
+
 		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
 			<input type="text" id="resumo" name="resumo" class="form-control" required />
 			<label class="form-label" for="resumo" name="resumo">Resumo</label>
 		</div>
+
 		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
 			<textarea type="text" id="detalhes" name="detalhes" class="form-control" rows="4" cols="50" required>
 			</textarea>
 			<label class="form-label" for="detalhes" name="detalhes">Detalhes</label>
 		</div>
+
 		<div class="mt-4 form-outline mb-4 center flex-column">
 			<input type="date" id="dataInicio" name="dataInicio" class="form-control" required />
 			<label class="form-label" for="dataInicio" name="dataInicio">Data de inicio</label>
 		</div>
+
+
+		<div class="mt-4 form-outline mb-4 center flex-column">
+			<input required multiple class="form-control" type="file" id="documentos" name="documentos" accept=".doc,.docx,.pdf,.xls,.xlsx,.csv,.txt">
+			<label class="form-label" for="documentos" name="documentos">Documento(s)</label>
+		</div>
+
+
+
 		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
-			<select data-style="shadow-sm" class="selectpicker" name="teacherId" id="teacherId">
+			<select required data-style="shadow-sm" class="selectpicker" name="teacherId" id="teacherId">
 				<option th:each="teacher : ${teachers}" th:value="${teacher.codigo}" th:text="${teacher.nome}">
 				</option>
 			</select>
 			<label class="form-label" for="teachers" name="teachers">Responsável</label>
 		</div>
-		
+
 		<div class="mt-4 form-outline mb-4 me-3 center flex-column">
-			<select multiple data-style="shadow-sm" class="selectpicker" name="studentsId" id="studentsId">
+			<select required multiple data-style="shadow-sm" class="selectpicker" name="studentsId" id="studentsId">
 				<option th:each="student : ${students}" th:value="${student.codigo}" th:text="${student.nome}">
 				</option>
 			</select>

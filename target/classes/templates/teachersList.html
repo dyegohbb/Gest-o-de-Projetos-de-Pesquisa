@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head th:replace="home :: headMgmt">
+</head>
+
+<body>
+	<section th:replace="home :: navBar">
+	</section>
+	<div class="mt-3 d-flex align-items-end flex-column mb-3 me-3">
+		<a href="../teacher/signup" class="btn btn-primary">Cadastrar Professor</a>
+	</div>
+
+	<form class="d-flex flex-column align-items-center mb-4" action="/teachers/search" method="post">
+		<div class="center mb-1 me-4">
+			<label class="me-3" th:each="knowledgeArea : ${T(com.search.project.model.KnowledgeArea).values()}"
+				th:value="${knowledgeArea}">
+				<input type="radio" name="knowledgeArea" id="knowledgeArea" th:value="${knowledgeArea}"><span
+					class="ms-2" th:text="${knowledgeArea.nomeExibicao}"></span><br>
+			</label>
+		</div>
+		<div class="container center justify-content-center">
+			<input class="form-control me-2 w-25" type="search" id="search" name="search" placeholder="Buscar"
+				aria-label="Buscar">
+			<button class="btn btn-primary" type="submit">Buscar</button>
+		</div>
+	</form>
+	<div class="mb-3 d-flex flex-wrap justify-content-center">
+		<div th:each="teacher : ${teachers}" class="card me-5 mt-1 min-w">
+			<h6 class="card-header" th:text="${teacher.registro}" />
+			<div class="card-body">
+				<h5 class="card-title nowrap ellipsis" th:attr="title=${teacher.nome}" th:text="${teacher.nome}" />
+				<p class="card-text nowrap ellipsis" th:attr="title=${teacher.areaConhecimento.nomeExibicao}"
+					th:text="${teacher.areaConhecimento.nomeExibicao}" />
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+					th:attr="data-bs-target=|#modal${teacher.codigo}|">
+					Mais detalhes
+				</button>
+			</div>
+			<div class="modal fade" th:id="|modal${teacher.codigo}|" tabindex="-1"
+				th:attr="aria-labelledby=|modal${teacher.codigo}|" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" th:id="|modal${teacher.codigo}Label|"
+								th:attr="title=${teacher.nome}" th:text="${teacher.nome}" />
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="d-flex">
+								<p class="card-text nowrap ellipsis">Registro:</p>
+								<p class="card-text nowrap ellipsis" th:attr="title=${teacher.registro}"
+									th:text="${teacher.registro}" />
+							</div>
+							<div class="d-flex">
+								<p class="card-text nowrap ellipsis">Data de admissão:</p>
+								<p class="card-text nowrap ellipsis"
+									th:attr="title=${#temporals.format(teacher.dataAdmissao, 'dd/MM/yyyy')}"
+									th:text="${#temporals.format(teacher.dataAdmissao, 'dd/MM/yyyy')}" />
+							</div>
+							<div class="d-flex">
+								<p class="card-text nowrap ellipsis">Área de conhecimento:</p>
+								<p class="card-text nowrap ellipsis"
+									th:attr="title=${teacher.areaConhecimento.nomeExibicao}"
+									th:text="${teacher.areaConhecimento.nomeExibicao}" />
+							</div>
+							<div class="d-flex">
+								<p class="card-text nowrap ellipsis">E-mail:</p>
+								<p class="card-text nowrap ellipsis" th:attr="title=${teacher.email}"
+									th:text="${teacher.email}" />
+							</div>
+							<div class="d-flex">
+								<p class="card-text nowrap ellipsis">LinkedIn:</p>
+								<p class="card-text nowrap ellipsis" th:attr="title=${teacher.linkedin}"
+									th:text="${teacher.linkedin}" />
+							</div>
+							<div class="d-flex">
+								<p class="card-text nowrap ellipsis">Data de nascimento:</p>
+								<p class="card-text nowrap ellipsis"
+									th:attr="title=${#temporals.format(teacher.dataNascimento, 'dd/MM/yyyy')}"
+									th:text="${#temporals.format(teacher.dataNascimento, 'dd/MM/yyyy')}" />
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Button trigger modal -->
+
+
+	<!-- Modal -->
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

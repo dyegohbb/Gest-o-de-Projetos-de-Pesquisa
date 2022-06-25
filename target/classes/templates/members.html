@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head th:replace="home :: headMgmt">
+</head>
+
+<body>
+	<section th:replace="home :: navBar">
+	</section>
+	<div class="mt-4 center flex-column">
+		<a class="btn btn-primary" href="/teachers/list" role="button">Professores</a>
+		<a class="mt-2 btn btn-primary" href="/students/list" role="button">Estudantes</a>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "document",
+      "type": "com.search.project.property.DocumentStorageProperty",
+      "sourceType": "com.search.project.property.DocumentStorageProperty"
+    }
+  ],
+  "properties": [
+    {
+      "name": "document.upload-directory",
+      "type": "java.lang.String",
+      "sourceType": "com.search.project.property.DocumentStorageProperty"
+    }
+  ],
+  "hints": []
+}

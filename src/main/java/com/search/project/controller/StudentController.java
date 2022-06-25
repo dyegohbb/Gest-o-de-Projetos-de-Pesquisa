@@ -25,12 +25,17 @@ public class StudentController {
 	private CourseDAO courseDAO;
 	
 	@GetMapping("/student/signup")
-	public String projects( Model model) {
+	public String register( Model model) {
 		
 		List<Course> courses = courseDAO.findAll();
 		model.addAttribute("courses", courses);
 		
 		return "studentRegister";
+	}
+	
+	@GetMapping("/students/list")
+	public String list() {
+		return "studentsList";
 	}
 	
 	@PostMapping("/student/save")

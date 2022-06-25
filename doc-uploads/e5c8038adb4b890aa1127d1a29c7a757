@@ -1,0 +1,43 @@
+falta:
+
+- Busca por projeto, professor e colaborador *[requisito]
+- Criar tela de listagem (exibindo apenas nome, cada unidade linkando para tela individual):
+	- Professores
+	- Alunos
+	- Cursos
+
+- Criar busca por area de conhecimento de professor na tela de Listagem de Professores (ordenado pelo nome)
+
+- Criar busca por nome de aluno na tela de Listagem de Alunos (nome aproximado, ordenado pelo nome)
+
+
+- Criar tela individual:
+	- Professor (exibindo cursos e projetos e linkando para a pagina)
+	- Alunos (exibindo Curso e projetos e linkando para a pagina)
+	- Cursos (exibindo professor e alunos linkando para a pagina)
+	- Projetos (exibindo professor e alunos e linkando para a pagina)
+
+- Tratar pós cadastro como sucesso (ou falha com motivo):
+	- professor
+	- estudante
+	- curso
+	- projetos
+
+- Criar tela contato
+
+- Tratar casos de duplicatas (Dois cursos com mesmo nome, dois projetos com mesmo nome)
+
+
+
+
+
+
+{LISTA DE REQUISITOS}
+
+1. Cadastrar Professor
+2. Cadastrar Aluno
+3. Cadastrar Projeto de Pesquisa
+4. Listar projetos de pesquisa ordenados pelo título
+5. Pesquisar aluno por nome aproximado - resultado ordenado pelo nome 
+6. Pesquisar professor por área de conhecimento - resultado ordenado pelo nome
+7. Pesquisar projetos de pesquisa por aluno, título ou professor - resultado ordenado pelo título

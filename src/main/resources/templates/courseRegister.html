@@ -5,9 +5,6 @@
 </head>
 
 <body>
-	<script type="text/javascript" src="../js/src/jquery.js"></script>
-	<script type="text/javascript" src="../js/src/main.js"></script>
-
 	<section th:replace="home :: navBar">
 	</section>
 	<form class="center flex-column" action="/courseRegister/save" method="post" th:object="${course}">

@@ -8,8 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,8 +27,6 @@ public class SearchProject {
 	private String resumo;
 	
 	private String detalhes;
-	
-	private byte[] arquivoPDF;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Teacher responsavel;
@@ -54,12 +54,6 @@ public class SearchProject {
 	}
 	public void setResumo(String resumo) {
 		this.resumo = resumo;
-	}
-	public byte[] getArquivoPDF() {
-		return arquivoPDF;
-	}
-	public void setArquivoPDF(byte[] arquivoPDF) {
-		this.arquivoPDF = arquivoPDF;
 	}
 	public Teacher getResponsavel() {
 		return responsavel;
