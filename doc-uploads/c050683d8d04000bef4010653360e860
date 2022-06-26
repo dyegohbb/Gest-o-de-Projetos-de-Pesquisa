@@ -1,0 +1,15 @@
+falta:
+
+- Tratar casos de duplicatas (Dois cursos com mesmo nome, dois projetos com mesmo nome)
+
+
+
+{LISTA DE REQUISITOS}
+
+5. Pesquisar aluno por nome aproximado - resultado ordenado pelo nome [CONTEMPLADO]
+1. Cadastrar Professor [CONTEMPLADO]
+2. Cadastrar Aluno [CONTEMPLADO]
+3. Cadastrar Projeto de Pesquisa [CONTEMPLADO]
+4. Listar projetos de pesquisa ordenados pelo título [CONTEMPLADO]
+6. Pesquisar professor por área de conhecimento - resultado ordenado pelo nome [CONTEMPLADO]
+7. Pesquisar projetos de pesquisa por aluno, título ou professor - resultado ordenado pelo título [CONTEMPLADO]
