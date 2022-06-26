@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head th:replace="home :: headMgmt">
+</head>
+
+<body>
+	<section th:replace="home :: navBar">
+	</section>
+	<div class="mt-5 d-flex justify-content-center flex-column align-items-center">
+		<h2 th:text="|O ${type} ${name} foi cadastrado com sucesso!|"/>
+		<a href="/" class="btn btn-primary mt-5">Voltar</a>
+	</div>
+</body>
+
+</html>

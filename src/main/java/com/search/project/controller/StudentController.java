@@ -1,8 +1,10 @@
 package com.search.project.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.search.project.model.Course;
 import com.search.project.model.Student;
-import com.search.project.model.Teacher;
 import com.search.project.model.dao.CourseDAO;
 import com.search.project.model.dao.StudentDAO;
 
@@ -34,7 +35,26 @@ public class StudentController {
 	}
 	
 	@GetMapping("/students/list")
-	public String list() {
+	public String list(Model model) {
+		
+		List<Student> students = studentDAO.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+		model.addAttribute("students", students);
+		return "studentsList";
+	}
+	
+	@PostMapping("/students/search")
+	public String search(@RequestParam String search, Model model) {
+		List<Student> students = new ArrayList<Student>();
+		
+		if (search.isEmpty()) {
+			return "redirect:/student/list";
+		} else {
+			students = studentDAO.findByName(search);
+		}
+		
+		model.addAttribute("amount", students.size());
+
+		model.addAttribute("students", students);
 		return "studentsList";
 	}
 	
@@ -45,9 +65,10 @@ public class StudentController {
 		student.setCurso(course);
 		
 		this.studentDAO.save(student);
-		model.addAttribute("student", student);
+		model.addAttribute("name", student.getNome());
+		model.addAttribute("type", "estudante");
 		
-		return "studentRegister";
+		return "sucess";
 	}
 	
 }

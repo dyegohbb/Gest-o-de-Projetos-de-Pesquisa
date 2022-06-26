@@ -49,6 +49,7 @@ public class TeacherController {
 			teachers = teacherDAO.findByNameAndKnowledgeArea(search, knowledgeArea.get());
 		}
 
+		model.addAttribute("amount", teachers.size());
 		model.addAttribute("teachers", teachers);
 		return "teachersList";
 	}
@@ -57,8 +58,8 @@ public class TeacherController {
 	public String teacherRegisterSave(Teacher teacher, Model model) {
 
 		this.teacherDAO.save(teacher);
-		model.addAttribute("teacher", teacher);
-
-		return "teacherRegister";
+		model.addAttribute("name", teacher.getNome());
+		model.addAttribute("type", "professor");
+		return "sucess";
 	}
 }

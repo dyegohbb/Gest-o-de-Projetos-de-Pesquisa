@@ -13,7 +13,7 @@
 
 	<form class="d-flex flex-column align-items-center mb-4" action="/teachers/search" method="post">
 		<div class="center mb-1 me-4">
-			<label class="me-3" th:each="knowledgeArea : ${T(com.search.project.model.KnowledgeArea).values()}"
+			<label class="me-3 mb-3" th:each="knowledgeArea : ${T(com.search.project.model.KnowledgeArea).values()}"
 				th:value="${knowledgeArea}">
 				<input type="radio" name="knowledgeArea" id="knowledgeArea" th:value="${knowledgeArea}"><span
 					class="ms-2" th:text="${knowledgeArea.nomeExibicao}"></span><br>
@@ -25,6 +25,11 @@
 			<button class="btn btn-primary" type="submit">Buscar</button>
 		</div>
 	</form>
+	
+	<div class="d-flex justify-content-center" th:if="${amount} == 0">
+		<h2>Nenhum professor encontrado</h2>
+	</div>
+	
 	<div class="mb-3 d-flex flex-wrap justify-content-center">
 		<div th:each="teacher : ${teachers}" class="card me-5 mt-1 min-w">
 			<h6 class="card-header" th:text="${teacher.registro}" />

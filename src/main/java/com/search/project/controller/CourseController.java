@@ -38,8 +38,9 @@ public class CourseController {
 		course.setCoordenador(teacher);
 		
 		this.courseDAO.save(course);
-		model.addAttribute("course", course);
+		model.addAttribute("name", course.getNome());
+		model.addAttribute("type", "curso");
 		
-		return "teacherRegister";
+		return "sucess";
 	}
 }

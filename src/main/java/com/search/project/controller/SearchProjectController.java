@@ -92,9 +92,10 @@ public class SearchProjectController {
 
 		documentService.addDocuments(documentos, searchProject);
 		this.searchProjectDAO.save(searchProject);
-		model.addAttribute("searchProject", searchProject);
+		model.addAttribute("name", searchProject.getTitulo());
+		model.addAttribute("type", "projeto de pesquisa");
 
-		return "redirect:/projects";
+		return "sucess";
 	}
 
 	@PostMapping("/projects/search")

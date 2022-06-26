@@ -9,13 +9,13 @@ import com.search.project.model.Teacher;
 
 public interface TeacherDAO extends JpaRepository<Teacher, Integer>{
 	
-	@Query(value = "SELECT * FROM TEACHER JOIN PEOPLE ON PEOPLE.CODIGO = TEACHER.CODIGO  WHERE TEACHER.AREA_CONHECIMENTO LIKE CONCAT('%',:knowledgArea,'%') ORDER BY PEOPLE.NOME ASC", nativeQuery = true)
+	@Query(value = "SELECT * FROM TEACHER JOIN PEOPLE ON PEOPLE.CODIGO = TEACHER.CODIGO WHERE TEACHER.AREA_CONHECIMENTO LIKE CONCAT('%',:knowledgArea,'%') ORDER BY PEOPLE.NOME ASC", nativeQuery = true)
 	List<Teacher> findByKnowledgeArea(String knowledgArea);
 	
-	@Query(value = "SELECT * FROM TEACHER JOIN PEOPLE ON PEOPLE.CODIGO = TEACHER.CODIGO  WHERE PEOPLE.NOME LIKE CONCAT('%',:nome,'%') ORDER BY PEOPLE.NOME ASC", nativeQuery = true)
+	@Query(value = "SELECT * FROM TEACHER JOIN PEOPLE ON PEOPLE.CODIGO = TEACHER.CODIGO WHERE PEOPLE.NOME LIKE CONCAT('%',:nome,'%') ORDER BY PEOPLE.NOME ASC", nativeQuery = true)
 	List<Teacher> findByName(String nome);
 	
-	@Query(value = "SELECT * FROM TEACHER JOIN PEOPLE ON PEOPLE.CODIGO = TEACHER.CODIGO  WHERE PEOPLE.NOME LIKE CONCAT('%',:nome,'%') AND TEACHER.AREA_CONHECIMENTO LIKE CONCAT('%',:knowledgArea,'%') ORDER BY PEOPLE.NOME ASC", nativeQuery = true)
+	@Query(value = "SELECT * FROM TEACHER JOIN PEOPLE ON PEOPLE.CODIGO = TEACHER.CODIGO WHERE PEOPLE.NOME LIKE CONCAT('%',:nome,'%') AND TEACHER.AREA_CONHECIMENTO LIKE CONCAT('%',:knowledgArea,'%') ORDER BY PEOPLE.NOME ASC", nativeQuery = true)
 	List<Teacher> findByNameAndKnowledgeArea(String nome, String knowledgArea);
 	
 }

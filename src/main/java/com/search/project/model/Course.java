@@ -15,7 +15,6 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
 	
-	// FIXME: ACEITANDO NOMES IGUAIS COMO CURSOS DIFERENTES, OCASIONANDO DOIS PROFESSORES ENSINANDO O MSM CURSO
 	private String nome;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
