@@ -1250,3 +1250,9 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 50 more
+2022-06-25 22:39:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DETALHES CHARACTER VARYING(255)": "U&'O quanto uma IA pode facilitar a vida domestica?O quanto uma IA pode facilita... (1491)"; SQL statement:
+insert into search_project (codigo, data_inicio, detalhes, responsavel_codigo, resumo, titulo) values (default, ?, ?, ?, ?, ?) [22001-212]
+2022-06-25 22:40:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DETALHES CHARACTER VARYING(255)": "'Billy SummersBilly SummersBilly SummersBilly SummersBilly SummersBilly SummersB... (256)"; SQL statement:
+insert into search_project (codigo, data_inicio, detalhes, responsavel_codigo, resumo, titulo) values (default, ?, ?, ?, ?, ?) [22001-212]

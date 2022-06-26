@@ -2,11 +2,9 @@ package com.search.project.service;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.search.project.model.Document;
 import com.search.project.model.SearchProject;
 
 public interface DocumentService {
